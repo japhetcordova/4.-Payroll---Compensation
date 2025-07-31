@@ -86,7 +86,11 @@ function closeModal() {
 
 function saveEdit() {
   const name = document.getElementById("editName").value.trim();
-  const role = document.getElementById("editRole").value.trim();
+  const role = document.getElementById("newRole").value;
+    if (!role) {
+    alert("Please select a valid role.");
+    return;
+  }
   const salary = parseFloat(document.getElementById("editSalary").value);
   if (!name || !role || isNaN(salary)) {
     alert("Please fill in all fields correctly.");
@@ -134,5 +138,31 @@ function updateTimestamp() {
   document.getElementById("timestamp").textContent =
     "Generated on: " + new Date().toLocaleString();
 }
+
+function addEmployee() {
+  const name = document.getElementById("newName").value.trim();
+  const role = document.getElementById("newRole").value;
+    if (!role) {
+    alert("Please select a valid role.");
+    return;
+}
+  const salary = parseFloat(document.getElementById("newSalary").value);
+
+  if (!name || !role || isNaN(salary)) {
+    alert("Please enter valid Name, Role, and Salary.");
+    return;
+  }
+
+  payrollData.push({ name, role, salary });
+
+  // Clear inputs
+  document.getElementById("newName").value = '';
+  document.getElementById("newRole").value = '';
+  document.getElementById("newSalary").value = '';
+
+  currentPage = Math.ceil(payrollData.length / rowsPerPage); // Jump to last page
+  filterAndRender();
+}
+
 
 window.onload = filterAndRender;

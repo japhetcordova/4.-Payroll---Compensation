@@ -9,6 +9,19 @@
 <body>
   <main id="reportArea">
     <h1>Payroll & Compensation</h1>
+    <h2>Add New Employee</h2>
+        <div class="form-create">
+        <input type="text" id="newName" placeholder="Name" />
+        <select id="newRole">
+            <option value="">Select Role</option>
+            <option value="Engineer">Engineer</option>
+            <option value="Accountant">Accountant</option>
+            <option value="Manager">Manager</option>
+            <option value="HR">HR</option>
+        </select>
+        <input type="number" id="newSalary" placeholder="Salary" />
+        <button onclick="addEmployee()">Add</button>
+    </div>
     
     <div>
       <input type="text" id="search" placeholder="Search employee...">
@@ -47,7 +60,13 @@
       <span onclick="closeModal()" class="close">&times;</span>
       <h2>Edit Payroll</h2>
       <input id="editName" placeholder="Name"/>
-      <input id="editRole" placeholder="Role"/>
+      <select id="editRole">
+        <option value="Engineer">Engineer</option>
+        <option value="Accountant">Accountant</option>
+        <option value="Manager">Manager</option>
+        <option value="HR">HR</option>
+      </select>
+
       <input id="editSalary" placeholder="Salary" type="number"/>
       <button onclick="saveEdit()">Save</button>
     </div>
