@@ -1,0 +1,50 @@
+body {
+  font-family: sans-serif;
+  padding: 2rem;
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1rem;
+}
+th, td {
+  padding: 0.75rem;
+  border: 1px solid #ccc;
+  text-align: left;
+}
+input {
+  margin-right: 1rem;
+  padding: 0.5rem;
+}
+button {
+  padding: 0.5rem 1rem;
+}
+.modal {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgba(0,0,0,0.5);
+}
+.modal-content {
+  background: white;
+  padding: 2rem;
+}
+.hidden {
+  display: none;
+}
+
+#payrollChart {
+  width: 100%;
+  max-width: 500px;
+  height: 100%;
+  max-height: 500px;
+}
+
+.chart-description {
+  font-size: 0.95rem;
+  color: #555;
+  margin-top: 1rem;
+  max-width: 600px;
+}

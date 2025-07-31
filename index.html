@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Payroll & Compensation</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main id="reportArea">
+    <h1>Payroll & Compensation</h1>
+    
+    <div>
+      <input type="text" id="search" placeholder="Search employee...">
+      <button onclick="downloadPDF()">Download PDF</button>
+    </div>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Role</th>
+          <th>Salary</th>
+          <th>Tax</th>
+          <th>Net Pay</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody id="payrollBody"></tbody>
+    </table>
+
+    <div id="pagination"></div>
+    
+    <canvas id="payrollChart" width="50" height="50"></canvas>
+    <p class="chart-description">
+        The pie chart above visualizes the total salary distribution across different employee roles. 
+        Each slice represents the combined salary of all employees under a specific role (e.g., Engineer, HR, Manager, Accountant). 
+        This allows you to quickly understand which roles contribute the most to the organization's overall payroll expenses.
+    </p>
+    
+    <p id="timestamp"></p>
+  </main>
+
+  <!-- Edit Modal -->
+  <div id="modal" class="modal hidden">
+    <div class="modal-content">
+      <span onclick="closeModal()" class="close">&times;</span>
+      <h2>Edit Payroll</h2>
+      <input id="editName" placeholder="Name"/>
+      <input id="editRole" placeholder="Role"/>
+      <input id="editSalary" placeholder="Salary" type="number"/>
+      <button onclick="saveEdit()">Save</button>
+    </div>
+  </div>
+
+  <script src="chart.js"></script>
+  <script src="html2pdf.bundle.min.js"></script>
+  <script src="script.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+
+</body>
+</html>
